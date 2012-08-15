@@ -5,28 +5,28 @@ class StackMachineTest {
 
 
   @Test
-  def testHappy1 = {
+  def moreComplexCase = {
        org.junit.Assert.assertEquals( 76, new StackMachine().stack_machine_emulator("13+62*7+*")  )
   }
 
 
   @Test
-   def testHappy2 = {
+   def simpleCase = {
         org.junit.Assert.assertEquals( 4, new StackMachine().stack_machine_emulator("13+")  )
    }
 
   @Test
-       def testUnhappy3= {
+       def tooManyOperatorsShouldResultInFailure= {
             org.junit.Assert.assertEquals( -1, new StackMachine().stack_machine_emulator("11++")  )
        }
 
   @Test
-    def testUnhappy4 = {
+    def notEnoughDigitsShouldResultInFailure = {
          org.junit.Assert.assertEquals( -1, new StackMachine().stack_machine_emulator("1+3+")  )
     }
 
   @Test
-      def testUnhappy5 = {
+      def tooManyInitialOperatorsShouldResultInFailure = {
            org.junit.Assert.assertEquals( -1, new StackMachine().stack_machine_emulator("++1")  )
       }
 
